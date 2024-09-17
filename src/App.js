@@ -1,25 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
+import TrafficLight from './components/TrafficLight';
+import PedestrianButton from './components/PedestrianButton';
+import { TrafficLightProvider } from './context/TrafficLightContext';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TrafficLightProvider>
+      <div className="app">
+        <h1>Traffic Light Simulator</h1>
+        <TrafficLight />
+        <PedestrianButton />
+      </div>
+    </TrafficLightProvider>
   );
-}
+};
 
 export default App;
